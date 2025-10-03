@@ -108,3 +108,78 @@ NE JAMAIS committer les fichiers contenant des données sensibles :
 .env (contient les clés secrètes WorkOS, les mots de passe BDD, etc.)
 
 Si vous travaillez sur une feature, publiez-la régulièrement pour éviter la perte de données 
+
+
+# 🚀 Gamecoin — Installation & Configuration
+Ce guide vous permet de rendre opérationnel un clone du projet Gamecoin récupéré depuis GitHub.
+
+## 📦 Prérequis
+Assurez-vous d’avoir les outils suivants installés :
+
+PHP ≥ 8.2
+
+Composer
+
+Node.js ≥ 18 + npm
+
+MySQL ou MariaDB
+
+Git
+
+Laravel installé globalement (optionnel)
+
+## 🧰 Étapes d’installation
+
+### 1. Cloner le projet
+bash
+git clone https://github.com/votre-utilisateur/gamecoin.git
+cd gamecoin
+### 2. Installer les dépendances PHP
+bash
+composer install
+### 3. Installer les dépendances front-end
+bash
+npm install
+⚙️ Configuration de l’environnement
+### 4. Copier le fichier .env
+bash
+cp .env.example .env
+### 5. Générer la clé d’application
+bash
+php artisan key:generate
+### 6. Configurer la base de données
+Dans le fichier .env, modifiez les lignes suivantes selon votre configuration locale :
+
+env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=gamecoin
+DB_USERNAME=root
+DB_PASSWORD=
+Créez la base de données gamecoin dans votre SGBD (phpMyAdmin, TablePlus, etc.).
+
+## 🧪 Migration & Seed
+### 7. Lancer les migrations
+bash
+php artisan migrate
+### 8. (Optionnel) Ajouter des données de test
+bash
+php artisan db:seed
+🎨 Compilation des assets
+### 9. En développement
+bash
+npm run dev
+### 10. En production
+bash
+npm run build
+🖥️ Lancer le serveur Laravel
+
+
+## ✅ Résumé des commandes utiles
+Action	Commande
+Installer les dépendances	composer install && npm install
+Générer la clé Laravel	php artisan key:generate
+Lancer les migrations	php artisan migrate
+Compiler les assets	npm run dev ou npm run build
+Démarrer le serveur	php
